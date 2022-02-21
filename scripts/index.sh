@@ -28,23 +28,16 @@ echo "Content-type: text/html
           </div>
           <div id='tabelle'>
             <table>
+
+            <tr>
+                <td>Zeitraum</td>
+                <td>Platz1</td>
+                <td>Platz2</td>
+                <td>Platz3</td>
+                <td>Platz4</td>
+            </tr>
             "
 
-            while read zeitraum platz1 platz2 platz3 platz4;
-            do 
-                counter=0;
-                if (counter<1)
-                echo "<tr> 
-                    <td>Zeitraum</td>
-                    <td>Platz1</td>
-                    <td>Platz2</td>
-                    <td>Platz3</td>
-                    <td>Platz4</td>
-                </tr>";
-                    counter++
-                fi
-            done <<< $(cat gebucht.txt)
-            
             while read zeitraum platz1 platz2 platz3 platz4;
             do
               echo "
