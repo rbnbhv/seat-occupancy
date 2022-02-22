@@ -1,12 +1,11 @@
 #!/bin/bash
 echo "Content-type: text/html
 
-<!DOCTYPE html>
 <html>
     <head>
         <meta charset='utf-8'>
         <title>Reserviere deinen Tennisplatz!</title>
-        <link href="styles.css" rel="stylesheet" type="text/css">
+        <link href="../styles.css" rel="stylesheet" type="text/css">
     </head>
 
     <body>
@@ -16,7 +15,7 @@ echo "Content-type: text/html
             </div>
             <p id="menu">
             <a href="#">Home</a>
-            <a href="booking.html" id="buchen">Platz buchen!</a>
+            <a href="booking.sh" id="buchen">Platz buchen!</a>
             <a href="#" id="123">Register</a>
             </p>
           </div>
@@ -29,13 +28,6 @@ echo "Content-type: text/html
           <div id='tabelle'>
             <table>
 
-            <tr>
-                <td>Zeitraum</td>
-                <td>Platz1</td>
-                <td>Platz2</td>
-                <td>Platz3</td>
-                <td>Platz4</td>
-            </tr>
             "
 
             while read zeitraum platz1 platz2 platz3 platz4;
@@ -49,7 +41,7 @@ echo "Content-type: text/html
                     <td><a href="booking.sh"><div>$platz4</div></a></td>
               </tr>
               ";
-            done <<< $(cat gebucht.txt)
+            done <<< $(cat /var/www/html/writable/gebucht.txt)
 
 
             echo "
